@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : GenericCharacter
+public class PlayerCharacterController : GenericCharacter
 {
     public override void Die()
     {
