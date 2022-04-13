@@ -8,4 +8,10 @@ public class PlayerCharacterController : GenericCharacter
     {
         throw new System.NotImplementedException();
     }
+
+    public void AttackEnemy()
+    {
+        //TODO: Decouple dependency
+        Attack(TurnCombatController.Instance.Enemy);
+    }
 }

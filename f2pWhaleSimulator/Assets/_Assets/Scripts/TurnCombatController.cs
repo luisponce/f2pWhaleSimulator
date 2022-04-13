@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurnCombatController : MonoBehaviour
+public class TurnCombatController : Singleton<TurnCombatController>
 {
     private PlayerCharacterController player;
     private GenericCharacter enemy;
@@ -13,7 +13,7 @@ public class TurnCombatController : MonoBehaviour
 
     public void ChangeTurn()
     {
-
+        isPlayerTurn = !isPlayerTurn;
     }
 
     #region properties
