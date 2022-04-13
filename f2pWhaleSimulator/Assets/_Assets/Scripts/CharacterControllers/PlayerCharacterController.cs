@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerCharacterController : GenericCharacter
 {
+    private void Start()
+    {
+        TurnCombatController.Instance.Player = this;
+    }
+
     public override void Die()
     {
         throw new System.NotImplementedException();
