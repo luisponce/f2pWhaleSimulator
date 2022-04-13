@@ -15,7 +15,7 @@ public abstract class GenericCharacter : MonoBehaviour
 
     public int CurHP { get => curHP; }
 
-    public void Attack(GenericCharacter target)
+    public virtual void Attack(GenericCharacter target)
     {
         target.DealDamage(damage);
         TurnCombatController.Instance.ChangeTurn();
@@ -34,6 +34,7 @@ public abstract class GenericCharacter : MonoBehaviour
 
     public abstract void Die();
 
+    #region HP Observers
     public void SubscribeHPObserver(HPObserver observer)
     {
         hpObservers.Add(observer);
@@ -51,4 +52,5 @@ public abstract class GenericCharacter : MonoBehaviour
             observer.OnHPChange(curHP);
         }
     }
+    #endregion
 }
